@@ -7,5 +7,5 @@ export default defineConfig({
   css: {
     devSourcemap: true,
   },
-  base: "/",
+  base: "/product-list-with-cart/",
 });
