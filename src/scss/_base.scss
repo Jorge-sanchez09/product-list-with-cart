@@ -1,0 +1,31 @@
+@use "./abstracts.scss" as *;
+
+html {
+  min-height: 100%;
+  font-size: 14px;
+}
+
+body {
+  display: grid;
+  height: 100%;
+  line-height: 1;
+  padding: 24px;
+  font-family: "Red Hat Text", sans-serif;
+  color: $rose-900;
+  background-color: $rose-50;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+main {
+  @include grid(32px);
+  margin-inline: auto;
+  align-items: start;
+  max-width: 1220px;
+
+  @include desktop {
+    grid-template-columns: minmax(auto, 880px) minmax(auto, 385px);
+  }
+}

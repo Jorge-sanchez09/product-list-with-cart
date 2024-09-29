@@ -1,0 +1,14 @@
+@use "../abstracts.scss" as *;
+
+.primary-button {
+  width: 100%;
+  padding: 18px;
+  border-radius: 48px;
+  font-weight: 600;
+  color: $neutral-100;
+  background-color: $red;
+
+  &:is(:hover, :focus) {
+    background-color: hsl(14, 85%, 32%);
+  }
+}

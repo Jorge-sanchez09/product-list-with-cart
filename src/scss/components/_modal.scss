@@ -1,0 +1,77 @@
+@use "../abstracts.scss" as *;
+
+.modal {
+  width: clamp(10px, 100vw, 500px);
+  padding: 42px 28px;
+  border: none;
+  border-radius: 16px;
+  color: $rose-500;
+  overflow-y: visible;
+
+  &[open] {
+    @include grid(32px);
+    align-content: start;
+  }
+
+  header {
+    @include grid(16px);
+  }
+
+  &__title {
+    font-size: 3rem;
+    color: $rose-900;
+  }
+
+  &__details {
+    @include grid(32px);
+    padding: 8px 24px 32px;
+    border-radius: 12px;
+    background-color: $rose-50;
+  }
+
+  .ordered-item {
+    @include flex($gap: 1em);
+    padding-block: 16px;
+    border-bottom: 1px solid $rose-100;
+
+    img {
+      border-radius: 6px;
+    }
+
+    .item__name {
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: $rose-900;
+    }
+
+    .item__quantity-total {
+      @include flex(8px);
+    }
+
+    .item__quantity {
+      font-weight: 600;
+      color: $red;
+    }
+
+    .item__total {
+      margin-left: auto;
+      font-weight: 600;
+      color: $rose-900;
+    }
+  }
+
+  .cart-total {
+    @include flex(1em);
+    justify-content: space-between;
+    color: $rose-900;
+  }
+
+  .order-total {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+body:has(dialog[open]) {
+  overflow-y: hidden;
+}

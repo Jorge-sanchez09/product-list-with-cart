@@ -1,0 +1,88 @@
+@use "../abstracts.scss" as *;
+
+.desserts {
+  @include grid(32px);
+
+  &-list {
+    @include grid(28px);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+.dessert {
+  @include grid;
+
+  header {
+    @include grid(8px);
+    order: 1;
+  }
+
+  &__category {
+    color: $rose-500;
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 600;
+    color: $red;
+  }
+
+  &__image-container {
+    position: relative;
+  }
+
+  &__image {
+    border-radius: 12px;
+  }
+
+  &__image--selected {
+    outline: 2px solid $red;
+  }
+
+  &__button-container {
+    width: 160px;
+    margin-inline: auto;
+    color: $neutral-100;
+    font-weight: 600;
+    transform: translateY(-50%);
+
+    .dessert__add-button {
+      @include flex(8px);
+      width: 100%;
+      justify-content: center;
+      padding: 10px 16px;
+      outline: 1px solid $rose-400;
+      border-radius: 64px;
+      font-weight: 600;
+      background-color: $rose-50;
+
+      &:is(:hover, :focus) {
+        color: $red;
+        outline: 1px solid $red;
+      }
+    }
+
+    .dessert__increment-decrement {
+      @include flex;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-radius: 64px;
+      background-color: $red;
+    }
+
+    .icon-button:is(:hover, :focus) {
+      svg {
+        background-color: $neutral-100;
+      }
+
+      path {
+        fill: $red;
+      }
+    }
+  }
+}
