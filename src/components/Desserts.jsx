@@ -5,7 +5,7 @@ export default function Desserts() {
   const [desserts, setDesserts] = useState([]);
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch("./data.json")
       .then(res => (res.ok ? Promise.resolve(res) : Promise.reject(res)))
       .then(res => res.json())
       .then(json => setDesserts(json))
